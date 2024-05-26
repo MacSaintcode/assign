@@ -3,6 +3,8 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -20,7 +22,7 @@ import javax.swing.JRadioButton;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-public class template extends JFrame implements ActionListener, ItemListener, WindowListener, FocusListener {
+public class template extends JFrame implements ActionListener, ItemListener, WindowListener, FocusListener,DocumentListener {
     Color fgcolor = Color.YELLOW, bgcolor = Color.BLACK;
     Font font = new Font("Comic sans", Font.BOLD, 20);
 
@@ -85,7 +87,7 @@ public class template extends JFrame implements ActionListener, ItemListener, Wi
         field.setBackground(bgcolor);
         field.setForeground(fgcolor);
         field.setFont(font);
-
+        field.getDocument().addDocumentListener(this);
         return field;
     }
 
@@ -137,5 +139,17 @@ public class template extends JFrame implements ActionListener, ItemListener, Wi
     public void focusLost(FocusEvent e) {
 
     }
+
+	@Override
+	public void insertUpdate(DocumentEvent e) {
+		}
+
+	@Override
+	public void removeUpdate(DocumentEvent e) {
+		}
+
+	@Override
+	public void changedUpdate(DocumentEvent e) {
+		}
 
 }

@@ -27,6 +27,8 @@ public class updateui extends template {
         updateStudentInfo = createbutton("Update Student Information");
         centerPanel.add(updateStudentInfo);
 
+        
+
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Update Student Information");
         setVisible(true);

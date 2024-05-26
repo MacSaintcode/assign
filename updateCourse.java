@@ -35,6 +35,7 @@ public class updateCourse extends template {
 
         addCourse = createbutton("Add Course");
         southpanel.add(addCourse);
+        selectCourse.setEnabled(false);
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Update Student Information");
@@ -43,23 +44,25 @@ public class updateCourse extends template {
         setResizable(false);
         setSize(500, 210);
         setLocationRelativeTo(null);
-        matrix.getDocument().addDocumentListener(new DocumentListener() {
 
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                System.out.println("Insert");
-            }
+    }
 
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                System.out.println("remove");
-            }
+    @Override
+    public void insertUpdate(DocumentEvent e) {
+        inputchecker();
+    }
 
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                System.out.println("update");
-            }
-        });
+    @Override
+    public void removeUpdate(DocumentEvent e) {
+        inputchecker();
+    }
+
+    void inputchecker() {
+        if (matrix.getText().length()==8) {
+            generate();
+        }else{ 
+            selectCourse.setEnabled(false);
+        }
     }
 
     void generate() {

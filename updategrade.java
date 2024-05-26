@@ -4,8 +4,10 @@ import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
 
 public class updategrade extends template {
 // Statement st2 = Practice_Connector.createStatement();
@@ -35,6 +37,8 @@ public class updategrade extends template {
         grade = createbutton("Grade");
         southpanel.add(grade);
 
+        addCourse.setEnabled(false);
+
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Update Student Information");
         setVisible(true);
@@ -43,6 +47,39 @@ public class updategrade extends template {
         setSize(500, 210);
         setLocationRelativeTo(null);
     }
+
+    @Override
+    public void insertUpdate(DocumentEvent e) {
+        inputchecker();
+    }
+
+    @Override
+    public void removeUpdate(DocumentEvent e) {
+        inputchecker();
+    }
+
+    void inputchecker() {
+        if (matrix.getText().length()==8) {
+            String selectIntoTable=String.format("SELECT Matric_Number FROM identity");
+            matrix.setEnabled(false);
+        // try {
+        // ResultSet rs = st2.executeQuery(selectIntoTable);
+        // while (rs.next()) {
+        // gots = rs.getString("Matric_Number");
+        // addCourse.addItem(gots);
+        // }
+        // System.out.println("Completed");
+        // } catch (SQLException sqe) {
+        // System.out.println(sqe.getMessage());
+        // }
+        matrix.setEnabled(false);
+            JOptionPane.showMessageDialog(null,"INVALID MATRIC NUMBER","iNFORMATION",2);
+            generate();
+        }else{ 
+            addCourse.setEnabled(false);
+        }
+    }
+
 
     void generate() {
         String gots;
