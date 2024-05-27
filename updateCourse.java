@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JTextField;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -40,7 +41,7 @@ public class updateCourse extends template {
         addCourse = createbutton("Add Course");
         southpanel.add(addCourse);
         selectCourse.setEnabled(false);
-
+        addWindowListener(this);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Update Course");
         setVisible(true);
