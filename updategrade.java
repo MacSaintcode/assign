@@ -47,7 +47,7 @@ public class updategrade extends template {
         southpanel.add(grade);
 
         addCourse.setEnabled(false);
-
+        addWindowsListener(this)
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Update Grades");
         setVisible(true);
