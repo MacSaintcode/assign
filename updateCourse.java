@@ -20,7 +20,9 @@ public class updateCourse extends template {
         JPanel centerPanel = new JPanel();
         centerPanel.setBackground(bgcolor);
         add(centerPanel);
-        centerPanel.setLayout(new GridLayout(2, 2));
+        GridLayout ri=new GridLayout(2, 2);
+        ri.setVgap(7);
+        centerPanel.setLayout(ri);
 
         centerPanel.add(createLabel("Matric Number*"));
         matrix = createtextfield();

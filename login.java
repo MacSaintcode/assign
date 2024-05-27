@@ -41,7 +41,9 @@ public class login extends template {
 		centerPanel.setBackground(bgcolor);
 		add(centerPanel);
 
-		centerPanel.setLayout(new GridLayout(5, 1));
+		GridLayout ri=new GridLayout(5, 1);
+        ri.setVgap(7);
+        centerPanel.setLayout(ri);
 
 		centerPanel.add(createLabel("User Name"));
 		userNameField = createtextfield();

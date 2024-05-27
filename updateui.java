@@ -17,7 +17,9 @@ public class updateui extends template {
         JPanel centerPanel = new JPanel();
         centerPanel.setBackground(bgcolor);
         add(centerPanel);
-        centerPanel.setLayout(new GridLayout(3, 1));
+        GridLayout ri=new GridLayout(3, 1);
+        ri.setVgap(7);
+        centerPanel.setLayout(ri);
         enroll = createbutton("Register Student Courses");
         centerPanel.add(enroll);
 
