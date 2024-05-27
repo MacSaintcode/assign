@@ -49,7 +49,7 @@ public class updategrade extends template {
 
         addCourse.setEnabled(false);
         addWindowsListener(this);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(0);
         setTitle("Update Grades");
         setVisible(true);
         pack();
