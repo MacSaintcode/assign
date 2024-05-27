@@ -101,7 +101,7 @@ public class Register1 extends template {
         southpanel.add(submit);
         Date_Of_Birth.addFocusListener(this);
         setDefaultCloseOperation(0);
-        setTitle("DETAILS MENU");
+        setTitle("Registration Menu");
         pack();
         setResizable(false);
         setSize(500, 500);

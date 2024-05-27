@@ -68,7 +68,7 @@ public class registerstudent extends template {
 
         generate();
         setDefaultCloseOperation(0);
-        setTitle("Registeration");
+        setTitle("Registeration cont.");
         pack();
         setResizable(false);
         setSize(500, 200);
