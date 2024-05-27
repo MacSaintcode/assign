@@ -42,7 +42,7 @@ public class updateCourse extends template {
         southpanel.add(addCourse);
         selectCourse.setEnabled(false);
         addWindowListener(this);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(0);
         setTitle("Update Course");
         setVisible(true);
         pack();
@@ -112,5 +112,11 @@ public class updateCourse extends template {
     public static void main(String[] args) {
         new updateCourse();
     }
+}
 
+    @Override
+    public void windowClosing(WindowEvent e) {
+            new updateui();
+            dispose();
+    }
 }
